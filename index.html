@@ -12,32 +12,35 @@
         }
 
         :root {
-            --mustard: #D4A017;
-            --dark-mustard: #C4900F;
+            --mustard: #E4B429;
+            --dark-mustard: #D4A017;
             --beige: #F5E6D3;
-            --light-beige: #FFF8EC;
-            --brown: #6B4423;
-            --dark-brown: #4A2E1A;
+            --light-beige: #FAF3E8;
+            --light-brown: #C9A86A;
+            --medium-brown: #B8956A;
+            --brown: #9C7E54;
+            --dark-brown: #8B6F47;
             --white: #ffffff;
-            --text-brown: #5C3D2E;
-            --medium-brown: #8B6F47;
+            --text-brown: #6B5744;
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: var(--text-brown);
+            color: #3D2817;
         }
 
         /* Navigation */
         nav {
             position: fixed;
             width: 100%;
-            background: rgba(75, 46, 26, 0.95);
+            background: rgba(156, 126, 84, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(107, 68, 35, 0.2);
+            box-shadow: 0 2px 20px rgba(156, 126, 84, 0.3);
         }
 
         .nav-container {
@@ -56,15 +59,16 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 60px;
             width: auto;
         }
 
         .logo-text {
             color: var(--white);
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .nav-links {
@@ -76,9 +80,9 @@
         .nav-links a {
             color: var(--white);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .nav-links a:hover {
@@ -87,7 +91,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--brown) 0%, var(--dark-brown) 100%);
+            background: linear-gradient(135deg, var(--light-brown) 0%, var(--brown) 100%);
             color: var(--white);
             padding: 150px 2rem 100px;
             text-align: center;
@@ -102,40 +106,47 @@
             font-size: 3rem;
             margin-bottom: 1rem;
             line-height: 1.2;
+            display: none;
         }
 
         .tagline {
-            font-size: 1.5rem;
-            color: var(--mustard);
+            font-size: 2.2rem;
+            color: #FFD700;
             margin-bottom: 1.5rem;
-            font-weight: 300;
+            font-weight: 700;
             font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 1;
             line-height: 1.8;
+            font-weight: 500;
+            color: #FFFFFF;
         }
 
         .cta-button {
             display: inline-block;
             background: var(--mustard);
             color: var(--white);
-            padding: 1rem 3rem;
+            padding: 1.1rem 3.5rem;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.15rem;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
+            box-shadow: 0 4px 15px rgba(228, 180, 41, 0.4);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         .cta-button:hover {
             background: var(--dark-mustard);
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(212, 160, 23, 0.4);
+            box-shadow: 0 6px 25px rgba(228, 180, 41, 0.5);
         }
 
         /* Section Styles */
@@ -150,19 +161,22 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
-            color: var(--brown);
+            color: #3D2817;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.1rem;
-            color: var(--medium-brown);
+            font-size: 1.2rem;
+            color: #5C4A3A;
             margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 500;
         }
 
         /* Services Grid */
@@ -180,29 +194,40 @@
             box-shadow: 0 5px 30px rgba(0,0,0,0.08);
             transition: all 0.3s;
             border: 2px solid transparent;
+            overflow: hidden;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(107, 68, 35, 0.15);
+            box-shadow: 0 10px 40px rgba(156, 126, 84, 0.2);
             border-color: var(--mustard);
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            display: none;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
-            color: var(--brown);
+            color: #3D2817;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .service-card p {
-            color: var(--medium-brown);
+            color: #5C4A3A;
             margin-bottom: 1rem;
             line-height: 1.7;
+            font-size: 1.05rem;
         }
 
         .service-card ul {
@@ -212,9 +237,10 @@
 
         .service-card ul li {
             padding: 0.5rem 0;
-            color: var(--medium-brown);
+            color: #5C4A3A;
             padding-left: 1.5rem;
             position: relative;
+            font-weight: 500;
         }
 
         .service-card ul li:before {
@@ -226,14 +252,7 @@
         }
 
         .pricing {
-            display: inline-block;
-            background: var(--beige);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            color: var(--brown);
-            font-weight: 600;
-            margin-top: 1rem;
-            font-size: 0.95rem;
+            display: none;
         }
 
         /* Why Choose Us */
@@ -258,24 +277,38 @@
 
         .benefit-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(107, 68, 35, 0.1);
+            box-shadow: 0 5px 20px rgba(156, 126, 84, 0.15);
         }
 
         .benefit-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--mustard), var(--dark-mustard));
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--white);
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(228, 180, 41, 0.3);
         }
 
         .benefit-item h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 0.8rem;
-            color: var(--brown);
+            color: #3D2817;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .benefit-item p {
-            color: var(--medium-brown);
-            font-size: 0.95rem;
+            color: #5C4A3A;
+            font-size: 1rem;
             line-height: 1.6;
+            font-weight: 500;
         }
 
         /* About Section */
@@ -290,10 +323,11 @@
         }
 
         .about-content p {
-            font-size: 1.1rem;
-            color: var(--medium-brown);
+            font-size: 1.15rem;
+            color: #5C4A3A;
             margin-bottom: 1.5rem;
             line-height: 1.8;
+            font-weight: 500;
         }
 
         .location-badge {
@@ -309,7 +343,7 @@
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, var(--brown) 0%, var(--dark-brown) 100%);
+            background: linear-gradient(135deg, var(--light-brown) 0%, var(--brown) 100%);
             color: var(--white);
             text-align: center;
         }
@@ -322,36 +356,101 @@
             color: rgba(255,255,255,0.8);
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
 
-        .contact-item {
-            text-align: center;
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
         }
 
-        .contact-item-icon {
-            font-size: 2.5rem;
-            color: var(--mustard);
-            margin-bottom: 1rem;
-        }
-
-        .contact-item h3 {
-            font-size: 1.2rem;
+        .form-group label {
+            display: block;
             margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
         }
 
-        .contact-item p {
-            opacity: 0.9;
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--brown);
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--mustard);
+            background: var(--white);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: var(--mustard);
+            color: var(--white);
+            padding: 1.1rem 3.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(228, 180, 41, 0.4);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-button:hover {
+            background: var(--dark-mustard);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(228, 180, 41, 0.5);
+        }
+
+        .contact-details {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1.1rem;
+        }
+
+        .contact-detail-item {
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        .contact-detail-item strong {
+            font-weight: 700;
+        }
+
+        .contact-detail-item a {
+            color: var(--mustard);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-detail-item a:hover {
+            color: var(--white);
         }
 
         /* Footer */
         footer {
-            background: var(--dark-brown);
+            background: var(--brown);
             color: var(--white);
             padding: 3rem 2rem 1.5rem;
             text-align: center;
@@ -421,6 +520,7 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
+                <img src="logo.svg" alt="Rivermill Financial Services Logo">
                 <div class="logo-text">RIVERMILL FINANCIAL SERVICES</div>
             </div>
             <ul class="nav-links">
@@ -449,6 +549,7 @@
             
             <div class="services-grid">
                 <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1554224311-beee460ae6ba?w=600&h=400&fit=crop" alt="Bookkeeping Services" class="service-image">
                     <div class="service-icon">📘</div>
                     <h3>Bookkeeping Services</h3>
                     <p>Accurate, organized, and dependable bookkeeping that keeps your business running smoothly.</p>
@@ -458,10 +559,10 @@
                         <li>Bank & credit card reconciliations</li>
                         <li>Clean-up & catch-up services</li>
                     </ul>
-                    <div class="pricing">Starting at $275/month</div>
                 </div>
 
                 <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop" alt="Tax Advisory Services" class="service-image">
                     <div class="service-icon">🧾</div>
                     <h3>Tax Advisory & Preparation</h3>
                     <p>Proactive tax planning and compliance to help you keep more of what you earn.</p>
@@ -471,10 +572,10 @@
                         <li>IRS guidance & support</li>
                         <li>Strategies to reduce liabilities</li>
                     </ul>
-                    <div class="pricing">Personal: $550+ | Corporate: $1,500+</div>
                 </div>
 
                 <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Company Setup" class="service-image">
                     <div class="service-icon">🏢</div>
                     <h3>Company Setup & Formation</h3>
                     <p>Start your business the right way with expert guidance from day one.</p>
@@ -487,6 +588,7 @@
                 </div>
 
                 <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="QuickBooks Management" class="service-image">
                     <div class="service-icon">💼</div>
                     <h3>QuickBooks Management</h3>
                     <p>Expert QuickBooks setup, support, and management to streamline your financial processes.</p>
@@ -499,6 +601,7 @@
                 </div>
 
                 <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Payroll Services" class="service-image">
                     <div class="service-icon">📊</div>
                     <h3>Payroll Services</h3>
                     <p>Comprehensive payroll processing that ensures accuracy and compliance every pay period.</p>
@@ -511,6 +614,7 @@
                 </div>
 
                 <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Financial Advisory" class="service-image">
                     <div class="service-icon">📈</div>
                     <h3>Financial Advisory</h3>
                     <p>Strategic financial insights and planning to drive your business growth and success.</p>
@@ -533,37 +637,69 @@
             
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
                     <h3>Expertise You Can Trust</h3>
                     <p>Experienced professionals focused on accuracy, compliance, and smart financial strategies.</p>
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon">💬</div>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
                     <h3>Clear Communication</h3>
                     <p>We explain everything in simple terms and tailor our services to your specific needs.</p>
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
                     <h3>Quick Response Time</h3>
                     <p>We respond quickly to all inquiries and are detail-oriented in everything we do.</p>
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon">💻</div>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
                     <h3>Modern Technology</h3>
                     <p>Streamlined systems and QuickBooks Pro advisors that save you time and eliminate stress.</p>
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
                     <h3>Long-Term Partnership</h3>
                     <p>We grow with your business—supporting you at every stage of your journey.</p>
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
                     <h3>Personalized Service</h3>
                     <p>Customized solutions designed specifically for your business goals and challenges.</p>
                 </div>
@@ -581,8 +717,6 @@
                 <p>Our mission is to simplify the financial side of your operations so you can focus on what matters most—growing your business with confidence. We understand that crunching numbers and balancing financial documents isn't thrilling for most people, and if you're having a hard time with it, we're here to do the job for you.</p>
                 
                 <p>Our accountants are known for their accuracy and dedication to client satisfaction, and you can rest assured that your finances are in good hands with our team.</p>
-                
-                <div class="location-badge">Proudly Serving Richmond, VA</div>
             </div>
         </div>
     </section>
@@ -590,30 +724,45 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Ready to Simplify Your Financial Life?</h2>
-            <p class="section-subtitle">Let Rivermill Financial Services handle the numbers so you can focus on what matters most—running and growing your business.</p>
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Ready to simplify your financial life? Get in touch with us today.</p>
             
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-item-icon">📞</div>
-                    <h3>Phone</h3>
-                    <p>Contact us for a consultation</p>
-                </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
                 
-                <div class="contact-item">
-                    <div class="contact-item-icon">✉️</div>
-                    <h3>Email</h3>
-                    <p>Send us your questions</p>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-item-icon">📍</div>
-                    <h3>Location</h3>
-                    <p>Richmond, Virginia</p>
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <strong>Email:</strong> <a href="mailto:rm-fin@outlook.com">rm-fin@outlook.com</a>
+                    </div>
+                    <div class="contact-detail-item">
+                        <strong>Location:</strong> Richmond, Virginia
+                    </div>
                 </div>
             </div>
             
-            <a href="#contact" class="cta-button" style="margin-top: 3rem;">Schedule a Consultation</a>
+            <a href="#contact" class="cta-button" style="margin-top: 3rem; display: none;">Schedule a Consultation</a>
         </div>
     </section>
 
