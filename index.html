@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rivermill Financial Services</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <title>Rivermill Financial Services | Richmond VA Accounting & Tax Advisory</title>
     <style>
         * {
             margin: 0;
@@ -12,274 +11,394 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --mustard: #D4A017;
+            --dark-mustard: #C4900F;
+            --beige: #F5E6D3;
+            --light-beige: #FFF8EC;
+            --brown: #6B4423;
+            --dark-brown: #4A2E1A;
+            --white: #ffffff;
+            --text-brown: #5C3D2E;
+            --medium-brown: #8B6F47;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #2c2c2c;
-            background-color: #f5f3ef;
+            color: var(--text-brown);
         }
 
-        header {
-            background-color: #d4c5a9;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
+        /* Navigation */
         nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(75, 46, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(107, 68, 35, 0.2);
+        }
+
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-right: 3rem;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 1.5rem;
-            font-size: 0.9rem;
-            color: #2c2c2c;
-            margin-left: 2rem;
-        }
-
-        .contact-info a {
-            color: #2c2c2c;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .contact-info a:hover {
-            color: #8b7355;
-        }
-
-        .contact-info svg {
-            width: 16px;
-            height: 16px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c2c2c;
-            font-family: 'Open Sans', sans-serif;
+            gap: 1rem;
         }
 
         .logo img {
-            height: 60px;
+            height: 50px;
             width: auto;
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
             display: flex;
-            list-style: none;
             gap: 2rem;
+            list-style: none;
         }
 
         .nav-links a {
+            color: var(--white);
             text-decoration: none;
-            color: #2c2c2c;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
-            color: #8b7355;
+            color: var(--mustard);
         }
 
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%);
-            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--brown) 0%, var(--dark-brown) 100%);
+            color: var(--white);
+            padding: 150px 2rem 100px;
             text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #2c2c2c;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--mustard);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            font-style: italic;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            color: #4a4a4a;
-            max-width: 700px;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--mustard);
+            color: var(--white);
+            padding: 1rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--dark-mustard);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 160, 23, 0.4);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
             text-align: center;
-            color: #2c2c2c;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--brown);
         }
 
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--medium-brown);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .service-card {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 40px rgba(107, 68, 35, 0.15);
+            border-color: var(--mustard);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #8b7355;
+            color: var(--brown);
         }
 
         .service-card p {
-            color: #666;
+            color: var(--medium-brown);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-card ul li {
+            padding: 0.5rem 0;
+            color: var(--medium-brown);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card ul li:before {
+            content: "✓";
+            color: var(--mustard);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .pricing {
+            display: inline-block;
+            background: var(--beige);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: var(--brown);
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: var(--light-beige);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(107, 68, 35, 0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--brown);
+        }
+
+        .benefit-item p {
+            color: var(--medium-brown);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--medium-brown);
+            margin-bottom: 1.5rem;
             line-height: 1.8;
         }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+        .location-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--mustard), var(--dark-mustard));
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
             margin-top: 2rem;
+            font-size: 1.1rem;
         }
 
-        .team-member {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 10px;
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--brown) 0%, var(--dark-brown) 100%);
+            color: var(--white);
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .team-member-avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #d4c5a9 0%, #c4b5a0 100%);
-            margin: 0 auto 1.5rem;
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-info {
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: #fff;
-            font-weight: bold;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
         }
 
-        .team-member h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #2c2c2c;
-        }
-
-        .team-member p {
-            color: #666;
-        }
-
-        .blog-placeholder {
-            background-color: #fff;
-            padding: 3rem;
-            border-radius: 10px;
+        .contact-item {
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .blog-placeholder p {
+        .contact-item-icon {
+            font-size: 2.5rem;
+            color: var(--mustard);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
             font-size: 1.2rem;
-            color: #666;
+            margin-bottom: 0.5rem;
         }
 
+        .contact-item p {
+            opacity: 0.9;
+        }
+
+        /* Footer */
         footer {
-            background-color: #d4c5a9;
-            padding: 2rem;
+            background: var(--dark-brown);
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem;
             text-align: center;
-            margin-top: 4rem;
         }
 
-        footer p {
-            color: #2c2c2c;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--mustard);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-            }
-
-            .nav-left {
-                flex-direction: column;
-                align-items: flex-start;
-                margin-right: 0;
-                gap: 1rem;
-                width: 100%;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .logo img {
-                height: 45px;
-            }
-
-            .contact-info {
-                margin-left: 0;
-                flex-direction: column;
-                gap: 0.5rem;
-                font-size: 0.85rem;
-            }
-
             .nav-links {
-                width: 100%;
-                justify-content: center;
-                gap: 1rem;
-                flex-wrap: wrap;
-            }
-
-            .hero {
-                padding: 4rem 1.5rem;
+                display: none;
             }
 
             .hero h1 {
                 font-size: 2rem;
             }
 
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section {
-                margin: 2rem auto;
-                padding: 0 1.5rem;
+            .tagline {
+                font-size: 1.2rem;
             }
 
             .section-title {
@@ -288,142 +407,232 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
 
-            .team-grid {
-                grid-template-columns: 1fr;
+            .contact-info {
+                flex-direction: column;
                 gap: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1rem;
-            }
-
-            .logo img {
-                height: 40px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-            }
-
-            .nav-links {
-                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-left">
-                <div class="logo">
-                    <img src="rivermill-logo.png" alt="Rivermill Financial Services Logo">
-                    <span>Rivermill Financial Services</span>
-                </div>
-                <div class="contact-info">
-                    <a href="tel:4047848614">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-                        </svg>
-                        404 784 8614
-                    </a>
-                    <a href="mailto:rm-fin@outlook.com">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        rm-fin@gmail.com
-                    </a>
-                </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-text">RIVERMILL FINANCIAL SERVICES</div>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>Spend Time on Business,<br>Not on Books</h1>
-        <p>Your dedicated accounting and tax partner. Strong, experience-driven financial support with proven accuracy, integrity and long-term commitment</p>
+        <div class="hero-content">
+            <h1>Rivermill Financial Services</h1>
+            <p class="tagline">Where Accuracy, Integrity, and Growth Flow Together</p>
+            <p>Your Trusted Partner in Business Finance. We provide reliable bookkeeping, expert tax advisory, and smooth company setup services designed to help your business thrive.</p>
+        </div>
     </section>
 
-    <section id="services" class="section">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Certified Public Accountants</h3>
-                <p>As CPAs, we are your trusted financial advisors—providing expert guidance and high-quality personal and business financial services built on integrity, accuracy, and professionalism.</p>
-            </div>
-            <div class="service-card">
-                <h3>Personal Taxes</h3>
-                <p>We uncover every tax deduction and credit you're eligible to claim.</p>
-            </div>
-            <div class="service-card">
-                <h3>Business Taxes</h3>
-                <p>From small businesses to Partnerships, LLCs, LLPs, C-Corps, and S-Corps — we support all types of entities.</p>
-            </div>
-            <div class="service-card">
-                <h3>Business Services</h3>
-                <p>We offer a full range of business services—incorporation, accounting, bookkeeping, and payroll.</p>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Core Services</h2>
+            <p class="section-subtitle">Comprehensive financial solutions tailored to your business needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📘</div>
+                    <h3>Bookkeeping Services</h3>
+                    <p>Accurate, organized, and dependable bookkeeping that keeps your business running smoothly.</p>
+                    <ul>
+                        <li>Monthly & quarterly financials</li>
+                        <li>Accounts receivable/payable</li>
+                        <li>Bank & credit card reconciliations</li>
+                        <li>Clean-up & catch-up services</li>
+                    </ul>
+                    <div class="pricing">Starting at $275/month</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🧾</div>
+                    <h3>Tax Advisory & Preparation</h3>
+                    <p>Proactive tax planning and compliance to help you keep more of what you earn.</p>
+                    <ul>
+                        <li>Individual & business tax returns</li>
+                        <li>Year-round tax planning</li>
+                        <li>IRS guidance & support</li>
+                        <li>Strategies to reduce liabilities</li>
+                    </ul>
+                    <div class="pricing">Personal: $550+ | Corporate: $1,500+</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Company Setup & Formation</h3>
+                    <p>Start your business the right way with expert guidance from day one.</p>
+                    <ul>
+                        <li>Entity selection (LLC, S-Corp, etc.)</li>
+                        <li>Business registration & filings</li>
+                        <li>Initial accounting system setup</li>
+                        <li>Compliance and ongoing support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>QuickBooks Management</h3>
+                    <p>Expert QuickBooks setup, support, and management to streamline your financial processes.</p>
+                    <ul>
+                        <li>Installation & customization</li>
+                        <li>Ongoing bookkeeping support</li>
+                        <li>Payroll integration</li>
+                        <li>Advanced reporting & training</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Payroll Services</h3>
+                    <p>Comprehensive payroll processing that ensures accuracy and compliance every pay period.</p>
+                    <ul>
+                        <li>Payroll processing & tax filing</li>
+                        <li>Direct deposit management</li>
+                        <li>Employee portal access</li>
+                        <li>Compliance & reporting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Financial Advisory</h3>
+                    <p>Strategic financial insights and planning to drive your business growth and success.</p>
+                    <ul>
+                        <li>Financial analysis & forecasting</li>
+                        <li>Business strategy consulting</li>
+                        <li>Cash flow management</li>
+                        <li>Performance metrics</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="blogs" class="section">
-        <h2 class="section-title">Blogs</h2>
-        <div class="blog-placeholder">
-            <p>Blog content coming soon. Stay tuned for financial insights, tips, and industry updates.</p>
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Rivermill Financial</h2>
+            <p class="section-subtitle">Our clients trust us because we deliver excellence at every step</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <h3>Expertise You Can Trust</h3>
+                    <p>Experienced professionals focused on accuracy, compliance, and smart financial strategies.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">💬</div>
+                    <h3>Clear Communication</h3>
+                    <p>We explain everything in simple terms and tailor our services to your specific needs.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Quick Response Time</h3>
+                    <p>We respond quickly to all inquiries and are detail-oriented in everything we do.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">💻</div>
+                    <h3>Modern Technology</h3>
+                    <p>Streamlined systems and QuickBooks Pro advisors that save you time and eliminate stress.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Long-Term Partnership</h3>
+                    <p>We grow with your business—supporting you at every stage of your journey.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Personalized Service</h3>
+                    <p>Customized solutions designed specifically for your business goals and challenges.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="section">
-        <h2 class="section-title">About Us</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="team-member-avatar">MS</div>
-                <h3>Mauli Shah, CPA</h3>
-                <p>CPA with over 15 years of experience in accounting and taxation. Dedicated to helping clients achieve their financial goals.</p>
-            </div>
-            <div class="team-member">
-                <div class="team-member-avatar">DP</div>
-                <h3>Dhaval Patel</h3>
-                <p>Payroll Specialist and Financial Consultant with expertise in streamlining business operations and ensuring regulatory compliance.</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Rivermill Financial Services</h2>
+            <div class="about-content">
+                <p>Rivermill Financial Services is dedicated to delivering reliable, accurate, and forward-thinking financial solutions for individuals and businesses. With a commitment to integrity and exceptional service, we provide trusted support across accounting, tax advisory, and QuickBooks management.</p>
+                
+                <p>Our mission is to simplify the financial side of your operations so you can focus on what matters most—growing your business with confidence. We understand that crunching numbers and balancing financial documents isn't thrilling for most people, and if you're having a hard time with it, we're here to do the job for you.</p>
+                
+                <p>Our accountants are known for their accuracy and dedication to client satisfaction, and you can rest assured that your finances are in good hands with our team.</p>
+                
+                <div class="location-badge">Proudly Serving Richmond, VA</div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Simplify Your Financial Life?</h2>
+            <p class="section-subtitle">Let Rivermill Financial Services handle the numbers so you can focus on what matters most—running and growing your business.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p>Contact us for a consultation</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-item-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>Send us your questions</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Richmond, Virginia</p>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-button" style="margin-top: 3rem;">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Rivermill Financial Services. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#faqs">FAQs</a>
+                <a href="#blog">Blog</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rivermill Financial Services. All rights reserved.</p>
+                <p>Richmond, Virginia | Where Accuracy, Integrity, and Growth Flow Together</p>
+            </div>
+        </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
