@@ -71,18 +71,17 @@
         }
 
         /* Navigation */
-        nav {
-            position: fixed;
-            top: 50px;
-            width: 100%;
-            background: rgba(156, 126, 84, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(156, 126, 84, 0.3);
-            transition: padding 0.3s ease;
-        }
-
+       nav {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    background: rgba(156, 126, 84, 0.8); /* more transparent = lighter */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(156, 126, 84, 0.2);
+    transition: padding 0.3s ease;
+}
         nav.scrolled {
             padding: 0.5rem 0;
         }
